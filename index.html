@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Produção de Calçados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shoe-prints"></i> Calculadora de Produção de Calçados</h1>
+            <p class="subtitle">Otimize sua produção diária</p>
+        </header>
+
+        <div class="card">
+            <div class="form-group">
+                <label for="timePerPair">Tempo para produzir um par (segundos):</label>
+                <input type="number" id="timePerPair" min="1" placeholder="Ex: 300">
+            </div>
+
+            <div class="form-group">
+                <label for="workingTime">Tempo disponível no dia (segundos):</label>
+                <input type="number" id="workingTime" value="30600">
+                <span class="input-info">Padrão: 8h30min = 30.600 segundos</span>
+            </div>
+
+            <div class="form-group breaks-section">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="includeBreaks"> Incluir pausas no cálculo
+                </label>
+                
+                <div id="breaksContainer" class="hidden">
+                    <div class="breaks-inputs">
+                        <label for="breakTime">Tempo total de pausas (minutos):</label>
+                        <input type="number" id="breakTime" value="30" min="0">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group efficiency-section">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="includeLoss"> Incluir perda de eficiência
+                </label>
+                
+                <div id="lossContainer" class="hidden">
+                    <div class="loss-inputs">
+                        <label for="lossPercentage">Percentual de perda estimada (%):</label>
+                        <input type="number" id="lossPercentage" value="10" min="0" max="100">
+                        <span class="input-info">Ex: 10% para fatores como retrabalho, ajustes, etc.</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="calculateBtn">Calcular Produção</button>
+
+            <div id="resultContainer" class="hidden">
+                <h2>Resultado da Produção:</h2>
+                <div class="result-display">
+                    <div class="result-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <div class="result-numbers">
+                        <span id="productionResult">0</span>
+                        <span class="result-label">pares por dia</span>
+                    </div>
+                </div>
+                <!-- Comparação de Produção Ideal e Produção Estimada -->
+                <div class="efficiency-comparison">
+                    <div class="comparison-row">
+                        <div class="comparison-cell">
+                            <h3>Produção Ideal (100%)</h3>
+                            <div class="comparison-value" id="idealProduction">0</div>
+                            <span class="comparison-label">pares/dia</span>
+                        </div>
+                        <div class="comparison-cell">
+                            <h3>Produção Estimada</h3>
+                            <div class="comparison-value" id="productionWithLoss">0</div>
+                            <span class="comparison-label">pares/dia</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Medidor de Eficiência -->
+                <div class="efficiency-meter">
+                    <div class="meter-label">Eficiência:</div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="efficiencyMeter"></div>
+                        <span class="meter-percentage" id="efficiencyPercentage">0%</span>
+                    </div>
+                </div>
+                <!-- Estatísticas adicionais -->
+                <div class="additional-info">
+                    <p>Tempo efetivo de trabalho: <span id="effectiveTime">0</span> horas</p>
+                    <p>Eficiência de produção: <span id="efficiencyRate">0</span> pares/hora</p>
+                </div>
+            </div>
+                
+    </div>
+
+
+        <footer>
+            <p>Desenvolvido para Kelsen Calçados por Leonardo</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

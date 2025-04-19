@@ -1,0 +1,323 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #3a7bd5;
+    --primary-dark: #2d62ad;
+    --secondary: #ff6b6b;
+    --light: #f7f9fc;
+    --dark: #343a40;
+    --gray: #adb5bd;
+    --success: #38b44a;
+}
+
+body {
+    background-color: #f0f2f5;
+    padding: 20px;
+    color: var(--dark);
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-dark);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header .subtitle {
+    font-size: 1.1rem;
+    color: var(--dark);
+    opacity: 0.8;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.2);
+    outline: none;
+}
+
+.input-info {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 5px;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+.hidden {
+    display: none;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    margin-right: 8px;
+}
+
+.breaks-inputs {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: var(--light);
+    border-radius: 6px;
+    border-left: 4px solid var(--primary);
+}
+
+#resultContainer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+
+#resultContainer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+}
+
+.result-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.result-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    animation: bounce 2s infinite;
+}
+
+.result-numbers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#productionResult {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--success);
+}
+
+.result-label {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-top: -5px;
+}
+
+.additional-info {
+    background-color: var(--light);
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.additional-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.additional-info p:last-child {
+    margin-bottom: 0;
+}
+
+.additional-info span {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* Estilos para a seção de perda de eficiência */
+.loss-inputs {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: var(--light);
+    border-radius: 6px;
+    border-left: 4px solid var(--secondary);
+}
+
+/* Comparação de eficiência */
+.efficiency-comparison {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.comparison-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.comparison-cell {
+    text-align: center;
+    padding: 15px;
+    width: 45%;
+    border-radius: 6px;
+}
+
+.comparison-cell:first-child {
+    background-color: rgba(58, 123, 213, 0.1);
+}
+
+.comparison-cell:last-child {
+    background-color: rgba(56, 180, 74, 0.1);
+}
+
+.comparison-cell h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.comparison-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.comparison-cell:first-child .comparison-value {
+    color: var(--primary-dark);
+}
+
+.comparison-cell:last-child .comparison-value {
+    color: var(--success);
+}
+
+.comparison-label {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Medidor de eficiência */
+.efficiency-meter {
+    margin-top: 15px;
+}
+
+.meter-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.meter-bar {
+    height: 24px;
+    background-color: #e9ecef;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(to right, #ff9a9e, #67b26f);
+    width: 0%;
+    transition: width 1s ease-in-out;
+    border-radius: 12px;
+}
+
+.meter-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--dark);
+    font-weight: 600;
+    text-shadow: 0 0 3px rgba(255,255,255,0.7);
+}
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    #productionResult {
+        font-size: 2.5rem;
+    }
+}
